@@ -2,6 +2,7 @@ import './NavBar.css';
 import logo from './LogoBrauerei.png';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return (
@@ -14,6 +15,9 @@ const NavBar = () => {
                 <Button variant='secondary'>Nacionales</Button>
                 <Button variant='secondary'>Importadas</Button>
                 <Button variant='secondary'>Accesorios</Button>
+            </div>
+            <div>
+                <CartWidget/>
             </div>
         </nav>
     )

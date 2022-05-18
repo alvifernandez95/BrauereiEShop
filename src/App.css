@@ -4,4 +4,9 @@
   color: white;
 }
 
+.App-body{
+  min-height: 80vh;
+  background-color: grey;
+}
+
 
