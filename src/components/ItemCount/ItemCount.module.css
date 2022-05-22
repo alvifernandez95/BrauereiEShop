@@ -1,0 +1,57 @@
+.success{
+    background-color: #282c34;
+    border: solid white 2px;
+    width: 30px;
+    border-radius: 30%;
+    color: white;
+}
+
+.success:hover {
+    background-color: grey;
+    border: solid white 2px;
+}
+
+.danger{
+    background-color: #282c34;
+    border: solid white 2px;
+    width: 30px;
+    border-radius: 30%;
+    color: white;
+}
+
+.danger:hover{
+    background: grey;
+    border: solid white 2px;
+}
+
+.contadorContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contador{
+    margin: 10px;
+}
+
+.addProduct {
+    background-color: #EBAD17;
+    color: black;
+    border: 2px solid #555555;
+    height: 2rem;
+    width: 80%;
+}
+
+.addProduct:hover {
+    background-color: #555555;
+    color: white;
+} 
+
+.containerCompraCounter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4% 4% 4% 4%;
+}

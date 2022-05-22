@@ -1,10 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import customFetch from '../../utils/CustomFetch';
+import productos from '../../utils/productos';
+import ItemList from './ItemList'
+import style from './ItemListContainer.module.css'
 
 const ItemListContainer = (props) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    customFetch(1000, productos)
+    .then(resultado => setItems(resultado))
+
+  }, []);
+
+  console.log(items);
+
   return (
-      <div className='shoppingListContainer' style={{background: props.background}}>
-          <h1 style={ {color : props.color}}>Tu carrito de compras</h1>
-          <h2 style={ {color : props.color}}>{props.greeting}</h2>
+      <div className={style.contenedor} >
+          <ItemList productos={items}/>
       </div>
   );
 }
