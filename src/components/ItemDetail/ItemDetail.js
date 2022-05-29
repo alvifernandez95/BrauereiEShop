@@ -1,7 +1,7 @@
 import s from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
 
-function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje, IBU, descripcion}){
+function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje, IBU, descripcion}) {
     return (
         <div className={s.cardContainer} key={id}>
             <div>
