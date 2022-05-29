@@ -40,12 +40,13 @@
     color: black;
     border: 2px solid #555555;
     height: 2rem;
-    width: 80%;
+    width: 110%;
 }
 
 .addProduct:hover {
     background-color: #f3c048;
 } 
+
 
 .containerCompraCounter{
     display: flex;

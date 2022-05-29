@@ -1,4 +1,4 @@
-import './CartWidget.css'
+import './CartWidget.module.css'
 import CartLogo from './CartLogo'
 
 
