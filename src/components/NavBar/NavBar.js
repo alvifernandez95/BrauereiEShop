@@ -8,14 +8,17 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
     return (
         <nav className={s.mainNav}>
-            <div className={s.logoGroup}>
-                <img src={logo} alt ='Logo' className={s.Logo} />
-                <h1>Brauerei</h1>    
-            </div>
+            <Link to='/'>
+                <div className={s.logoGroup}>
+                    <img src={logo} alt ='Logo' className={s.Logo} />
+                    <h1>Brauerei</h1>    
+                </div>
+            </Link>
+            
             <div className={s.buttonGroup}>
-                <Button variant='secondary' className={s.navButton}>Nacionales</Button>
-                <Button variant='secondary' className={s.navButton}>Importadas</Button>
-                <Button variant='secondary' className={s.navButton}>Accesorios</Button>
+                <NavLink to='category/importada'  className={s.Option}>Importadas</NavLink>
+                <NavLink to='category/nacionales' className={s.Option}>Nacionales</NavLink>
+                <NavLink to='category/accesorios' className={s.Option}>Accesorios</NavLink>
             </div>
             <div>
                 <CartWidget/>
