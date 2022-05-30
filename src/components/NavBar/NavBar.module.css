@@ -49,7 +49,7 @@
     width: auto;
     padding: 12px;
     font-size: 8px;
-    background: #8C30F5;
+    background: #EBAD17;
     border-radius: 8px;
     flex: none;
     display: flex;
@@ -59,13 +59,16 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #FFFFFF;
+    color: black;
     border: none;
     border-style: none;
     cursor: pointer;
     outline: inherit;
 }
 
+.Option:hover{
+    text-decoration: none;
+}
 .ActiveOption {
     /* color: #8C30F5; */
     text-decoration: none;
@@ -96,3 +99,6 @@
     color :rgb(255, 0, 0)
 }
 
+.mainNav{
+    text-decoration: none;
+}
