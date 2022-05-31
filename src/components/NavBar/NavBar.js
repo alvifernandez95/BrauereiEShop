@@ -1,6 +1,5 @@
 import s from './NavBar.module.css';
 import logo from './LogoBrauerei.png';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
 import { Link, NavLink } from 'react-router-dom';
@@ -16,7 +15,7 @@ const NavBar = () => {
             </Link>
             
             <div className={s.Categories}>
-                <NavLink to='category/importada'  className={s.Option}>Importadas</NavLink>
+                <NavLink to='category/importadas'  className={s.Option}>Importadas</NavLink>
                 <NavLink to='category/nacionales' className={s.Option}>Nacionales</NavLink>
                 <NavLink to='category/accesorios' className={s.Option}>Accesorios</NavLink>
             </div>

@@ -10,7 +10,7 @@ const productos = [
         estilo: 'Belgian Brown Ale',
         porcentaje: 6.5,
         IBU: 20,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id: "2",
@@ -23,7 +23,7 @@ const productos = [
         estilo: 'Belgian Blonde Ale',
         porcentaje: 6.6,
         IBU: 20,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id: "3",
@@ -36,7 +36,7 @@ const productos = [
         estilo: 'Doppelbock',
         porcentaje: 8,
         IBU: 28,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id: "4",
@@ -49,7 +49,7 @@ const productos = [
         estilo: 'Strong Golden Ale',
         porcentaje: 9,
         IBU: 26,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id:"5",
@@ -62,7 +62,7 @@ const productos = [
         estilo: 'Strong Dark Ale',
         porcentaje: 9,
         IBU: 26,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id:"6",
@@ -75,7 +75,7 @@ const productos = [
         estilo: 'Belgian Strong Ale',
         porcentaje: 10.5,
         IBU: 30,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id:"7",
@@ -88,7 +88,7 @@ const productos = [
         estilo: 'Weissbier',
         porcentaje: 5.5,
         IBU: 16,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id:"8",
@@ -101,7 +101,7 @@ const productos = [
         estilo: 'Belgian Strong Ale',
         porcentaje: 8.5,
         IBU: 33,
-        category: 'importada' 
+        category: 'importadas' 
     },
     {
         id:"9",
@@ -114,7 +114,46 @@ const productos = [
         estilo: 'Weizenbock',
         porcentaje: 7.3,
         IBU: 10,
-        category: 'importada' 
+        category: 'importadas' 
+    },
+    {
+        id:"10",
+        nombre: 'Antares Kölsch 500ml',
+        precio: 430,
+        imagen: 'https://www.espaciovino.com.ar/media/default/0001/53/thumb_52828_default_big.jpeg' ,
+        stock: 150,
+        descripcion: 'Existen muchas cervezas doradas y refrescantes. Pero frutadas y con destellos finales de lúpulo, sólo hay un estilo: la Kölsch. En Antares rescatamos la antigua receta de la cerveza favorita de los bebedores en colonia, Alemania, y la honramos desde 1998. En nuestra cocina, su legado sigue intacto.',
+        pais: 'Argentina',
+        estilo: 'Kölsch',
+        porcentaje: 5,
+        IBU: 22,
+        category: 'nacionales'
+    },
+    {
+        id:"11",
+        nombre: 'Antares Imperial Stout 500ml',
+        precio: 430,
+        imagen: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/861/458/products/3365711-bfad846d61a76f14aa15670989541740-640-0.jpg' ,
+        stock: 110,
+        descripcion: 'Catalina la Grande amaba las emociones fuertes. Por eso, la Imperial Stout, negra y tostada, empapada de alcohol y pasas, amarga y ahumada, era su cerveza favorita. Esencia inglesa de exportación. Tímidos, abstenerse.',
+        pais: 'Argentina',
+        estilo: 'Stout',
+        porcentaje: 8.5,
+        IBU: 49,
+        category: 'nacionales'
+    }, 
+    {
+        id:"12",
+        nombre: 'Antares Cuatro Tres 500ml',
+        precio: 520,
+        imagen: 'https://www.beercoffee.com.ar/wp-content/uploads/2020/06/cuatro-tres.jpg' ,
+        stock: 150,
+        descripcion: 'A los marplatenses nos gusta disfrutar de la costa todos los días. En invierno nos ponemos el Cuatro Tres, le hacemos frente al frío y nos metemos al mar. El traje nos abriga dentro del agua y la Doppelbock fuera. Una cerveza cobriza intensa en maltas, con carácter sedoso y la dosis de lúpulo justa para redondear su personalidad.',
+        pais: 'Argentina',
+        estilo: 'Doppelbock',
+        porcentaje: 7.7,
+        IBU: 24,
+        category: 'nacionales'
     }
 ]
 
