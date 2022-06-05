@@ -1,6 +1,4 @@
 import {useState, useEffect} from 'react';
-import customFetch from '../../utils/CustomFetch';
-import productos from '../../utils/productos';
 import ItemList from './ItemList'
 import s from './ItemListContainer.module.css'
 import { getProducts } from '../../utils/asyncmock';

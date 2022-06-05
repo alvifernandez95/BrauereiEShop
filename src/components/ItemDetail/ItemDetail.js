@@ -1,20 +1,32 @@
-import s from './ItemDetail.module.css'
-import ItemCount from '../ItemCount/ItemCount'
+import s from './ItemDetail.module.css';
+import ItemCount from '../ItemCount/ItemCount';
+import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje, IBU, descripcion}) {
+    
+    const [quantity, setQuantity] = useState(0)
+    
+    const handleOnAdd = (count) => {
+        setQuantity(count)
+    }
+    
     return (
         <div className={s.cardContainer} key={id}>
-            <div>
+            <div className={s.titleImage}>
                 <h1><b>{nombre}</b></h1>
                 <img src={imagen} alt={nombre} className={s.componentsImg}/>
             </div>
             <div className={s.cardInfo}>
-                <p>$ {precio}</p>
-                <p>Pais de origen: {pais} </p>
-                <p>Estilo: {estilo}</p>
-                <p>% de alcohol: {porcentaje}%</p>
-                <p>IBU: {IBU}</p>
+                <h2>$ {precio}</h2>
+                <p><b>Pais de origen: {pais} </b></p>
+                <p><b>Estilo: {estilo}</b></p>
+                <p><b>% de alcohol: {porcentaje}%</b></p>
+                <p><b>IBU: {IBU}</b></p>
                 <p>Descripcion: {descripcion}</p>
+                <footer className='ItemFooter'>
+                    { quantity > 0  ? <Link to='/cart' className={s.Finalizar}>Finalizar</Link> : <ItemCount stock={stock} onConfirm={handleOnAdd}/>}
+                </footer>
             </div>
         </div>
     )

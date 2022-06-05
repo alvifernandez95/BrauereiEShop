@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import s from './ItemCount.module.css'
 
-function ItemCount({stock}){
-    const [count, setCount] = useState(0);
+function ItemCount({onConfirm, stock, initial=0}){
+    const [count, setCount] = useState(initial);
     
     function suma(){
         if(count < stock) {
@@ -16,12 +16,7 @@ function ItemCount({stock}){
         }
     }
 
-    function agregar(){
-        if(count <= 0) {alert("No se agregó ningún producto al carrito.")
-        }else {
-            alert('Agregaste ' + count + ' productos a tu carrito.');
-        }
-    }
+    
 
     return (
         <div className={s.containerCompraCounter}>
@@ -30,7 +25,7 @@ function ItemCount({stock}){
                 <p className={s.contador}>{count}</p>
                 <button onClick={suma} className={s.success}>+</button>
             </div>
-            <button onClick={agregar} className={s.addProduct}>Comprar</button>
+            <button onClick={() => onConfirm(count)} className={s.addProduct}>Agregar</button>
         </div>
     )
 

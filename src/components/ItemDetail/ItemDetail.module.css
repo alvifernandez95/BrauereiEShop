@@ -1,0 +1,44 @@
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    width: 90%;
+    justify-content: center;
+    border: solid white 1px;
+    margin-left: 5%;
+    padding-top: 3%;
+    border-radius: 3%;
+    padding-bottom: 5%;
+    padding-right: 3%;
+    background: rgba(50,50,51,1);
+}
+
+.componentsImg{
+    width: 70%;
+    height: auto;
+}
+
+.titleImage{
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Finalizar{
+    background-color: #EBAD17;
+    color: black;
+    border: 2px solid #555555;
+    height: 2rem;
+    width: 25%;
+    margin-bottom: 2%;
+    text-decoration: none;
+    padding-left: 2%;
+}
+  
+.Finalizar:hover{
+    color: black;
+    background-color: #f3c048;
+  }
