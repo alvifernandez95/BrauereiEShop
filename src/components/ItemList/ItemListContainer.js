@@ -38,11 +38,7 @@ const ItemListContainer = ({greeting}) => {
       return <h1>Loading...</h1>
   }
 
-  //return (
-  //    <div className={s.contenedor} >
-  //        <ItemList productos={items}/>
-  //    </div>
-  //);
+
   return(
     <div className={s.contenedor}>
         <h1>{ greeting }</h1>

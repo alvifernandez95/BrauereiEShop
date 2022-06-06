@@ -1,0 +1,46 @@
+.Card{
+    display: flex;
+    color: white;
+    flex-direction: row;
+    border: solid white 1px;
+    border-radius: 2%;
+    margin: 3%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Imagen{
+    width: 10%;
+    height: 100%;
+    background-size: cover;
+    margin-left: 3%;
+    margin-top: 2%; 
+    margin-bottom: 2%;
+    border-radius: 2%;
+}
+
+.Remove{
+    margin-right: 3%;
+    border-radius: 20%;
+}
+
+.Remove:hover{
+    transform: scale(1.1);
+}
+
+.Title{
+    align-self: center;
+}
+
+.CartContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
