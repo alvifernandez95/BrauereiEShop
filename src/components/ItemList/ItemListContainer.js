@@ -8,7 +8,8 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState('');
 
   const { categoryId } = useParams()
 
@@ -32,7 +33,13 @@ const ItemListContainer = ({greeting}) => {
             setLoading(false)
         })
     }
-}, [categoryId])
+    }, [categoryId])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setTitle('Nuestros Productos')
+        }, 3000)
+    })
 
   if(loading) {
       return <h1>Loading...</h1>
@@ -41,7 +48,7 @@ const ItemListContainer = ({greeting}) => {
 
   return(
     <div className={s.contenedor}>
-        <h1>{ greeting }</h1>
+        <h1>{ title }</h1>
         { 
             products.length > 0 
                 ? <ItemList productos={products} />

@@ -3,8 +3,13 @@ import logo from './LogoBrauerei.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
 import { Link, NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
 
 const NavBar = () => {
+    const { getQuantity } = useContext(CartContext)
+
+    const quantity = getQuantity()
     return (
         <nav className={s.mainNav}>
             <Link to='/'>
@@ -20,7 +25,7 @@ const NavBar = () => {
                 <NavLink to='category/accesorios' className={s.Option}>Accesorios</NavLink>
             </div>
             <div>
-                <CartWidget/>
+                {quantity > 0 &&  <CartWidget/>}
             </div>
         </nav>
     )

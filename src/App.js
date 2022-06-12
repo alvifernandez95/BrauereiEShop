@@ -5,24 +5,27 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { CartContextProvider } from './context/CartContext';
+import { NotificationProvider } from './notification/Notification';
 
 function App() {
   return (
     <div className="App">
       <CartContextProvider>
-        <BrowserRouter>
-          <header className="App-header">
-            <NavBar />
-          </header>
-          <body className='App-body'>
-              <Routes>
-                <Route path='/' element={<ItemListContainer color='white' greeting='Todos los productos' background='#EBAD17' className='List'/>}/>
-                <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos filtrados por categoria"/>}/>
-                <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
-                <Route path='/cart' element={<Cart />} />
-              </Routes>
-          </body>
-        </BrowserRouter>
+        <NotificationProvider>
+          <BrowserRouter>
+            <header className="App-header">
+              <NavBar />
+            </header>
+            <body className='App-body'>
+                <Routes>
+                  <Route path='/' element={<ItemListContainer color='white' greeting='Todos los productos' background='#EBAD17' className='List'/>}/>
+                  <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos filtrados por categoria"/>}/>
+                  <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+                  <Route path='/cart' element={<Cart />} />
+                </Routes>
+            </body>
+          </BrowserRouter>
+        </NotificationProvider>
       </CartContextProvider>
     </div>
   );
