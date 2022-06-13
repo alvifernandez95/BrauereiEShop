@@ -56,7 +56,9 @@ function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje
                 <p><b>IBU: {IBU}</b></p>
                 <p>Descripcion: {descripcion}</p>
                 <footer className='ItemFooter'>
-                    <Count stock={stock} onAdd={handleOnAdd} initial={getProduct(id)?.quantity} />
+                { quantity > 0  
+                    ? <Link to='/cart' className='Option'>Finalizar compra</Link> 
+                    : <ItemCount stock={stock} onAdd={handleOnAdd} initial={getProduct(id)?.quantity}/>}
                 </footer>
             </div>
         </div>

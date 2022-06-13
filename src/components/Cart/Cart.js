@@ -3,13 +3,20 @@ import { useContext } from "react"
 import CartContext from "../../context/CartContext"
 import s from "./Cart.module.css"
 import CartItem from "../CartItem/CartItem"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
     const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)  
 
     if(getQuantity() === 0) {
         return (
-            <h1>No hay items en el carrito</h1>
+            <div>
+                <h1>No hay items en el carrito</h1>
+                <Link to='/'>
+                    <h2>Regresa al Inicio para continuar con tus compras.</h2>
+                </Link>
+            </div>
+            
         )
     }
 
