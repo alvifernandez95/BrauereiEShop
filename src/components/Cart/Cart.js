@@ -1,29 +1,26 @@
 
 import { useContext } from "react"
 import CartContext from "../../context/CartContext"
-import s from './Cart.module.css'
+import s from "./Cart.module.css"
+import CartItem from "../CartItem/CartItem"
 
 const Cart = () => {
+    const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)  
 
-    const { cart, removeItem } = useContext(CartContext)
+    if(getQuantity() === 0) {
+        return (
+            <h1>No hay items en el carrito</h1>
+        )
+    }
 
-    return(
+    return (     
         <div className={s.CartContainer}>
-            <h1 className={s.Title}>Cart</h1>
-            <div>
-                {cart.map(prod => {
-                    return(
-                        <div key={prod.id} className={s.Card}>
-                            <img src={prod.imagen} alt={prod.nombre} className={s.Imagen}/>
-                            <div ><b>{prod.nombre}</b></div>
-                            <div>Cantidad: {prod.quantity}</div>
-                            <div>Precio unitario: ${prod.precio}</div>
-                            <div>Subtotal: ${prod.precio * prod.quantity}</div>
-                            <button onClick={() => removeItem(prod.id)} className={s.Remove}>X</button>
-                        </div>
-                    )})
-                }
-            </div>
+            <h1 className={s.MainTitle}>Cart</h1>
+            { cart.map(p => <CartItem className={s.CartContent} key={p.id} {...p}/>) }
+            <h3 className={s.SubTitle}>Total: ${getTotal()}</h3>
+            <button onClick={() => clearCart()} className={s.Button}>Limpiar carrito</button>
+            <button className={s.Button}>Generar Orden</button>
+
         </div>
     )
 }

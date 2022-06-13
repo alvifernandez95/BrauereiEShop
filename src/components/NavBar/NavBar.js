@@ -12,7 +12,7 @@ const NavBar = () => {
     const quantity = getQuantity()
     return (
         <nav className={s.mainNav}>
-            <Link to='/'>
+            <Link to='/' className={s.LogoLink}>
                 <div className={s.logoGroup}>
                     <img src={logo} alt ='Logo' className={s.Logo} />
                     <h1 className={s.Title}>Brauerei</h1>    

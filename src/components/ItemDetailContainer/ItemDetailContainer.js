@@ -2,7 +2,6 @@ import s from './ItemDetailContainer.module.css'
 import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom'
-//import { getProductsById } from '../../utils/asyncmock'
 import {getDoc, doc} from 'firebase/firestore'
 import {db} from '../../services/firebase'
 
@@ -14,10 +13,6 @@ const ItemDetailContainer = () => {
     
 
     useEffect(() => {
-        /*getProductsById(productId).then(response => {
-            setProduct(response)
-        })*/
-
         getDoc(doc(db, 'productos', productId)).then(response => {
             const producto = {id: response.id, ...response.data()}
             setProduct(producto)

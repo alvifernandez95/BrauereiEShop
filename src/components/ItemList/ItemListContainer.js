@@ -1,8 +1,6 @@
 import {useState, useEffect} from 'react';
 import ItemList from './ItemList'
 import s from './ItemListContainer.module.css'
-/*import { getProducts } from '../../utils/asyncmock';
-import { getProductsByCategory } from '../../utils/asyncmock';*/
 import { useParams } from 'react-router-dom';
 import { getDocs , collection, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase';
@@ -29,23 +27,6 @@ const ItemListContainer = ({greeting}) => {
     }).finally(() => {
         setLoading(false)
     })
-    /*if(!categoryId) {
-        getProducts().then(response => {
-            setProducts(response)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-    } else {
-        getProductsByCategory(categoryId).then(response => {
-            setProducts(response)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-    }*/
     }, [categoryId])
 
     useEffect(() => {

@@ -21,18 +21,6 @@
     width: 10%;
 }
 
-/*.buttonGroup{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 5%;
-    margin-right: 3%;
-    margin-bottom: 5%;
-}
-
-.navButton{
-    margin-right: 2%;
-}*/
 
 .Categories {
     display: flex;
@@ -48,7 +36,7 @@
     /* TODO */
     width: auto;
     padding: 12px;
-    font-size: 8px;
+    font-size: 12px;
     background: #EBAD17;
     border-radius: 8px;
     flex: none;
@@ -59,7 +47,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: black;
+    color: white;
     border: none;
     border-style: none;
     cursor: pointer;
@@ -101,4 +89,14 @@
 
 .mainNav{
     text-decoration: none;
+}
+
+.LogoLink{
+    text-decoration: none;
+    color: white;
+}
+
+.LogoLink:hover{
+    text-decoration: none;
+    color: grey;
 }
