@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.580dd6f3.css",
+    "main.js": "/static/js/main.48e26e11.js",
+    "static/js/787.400b6a6a.chunk.js": "/static/js/787.400b6a6a.chunk.js",
+    "static/media/LogoBrauerei.png": "/static/media/LogoBrauerei.cdc7e657e23a21df41c8.png",
+    "index.html": "/index.html",
+    "main.580dd6f3.css.map": "/static/css/main.580dd6f3.css.map",
+    "main.48e26e11.js.map": "/static/js/main.48e26e11.js.map",
+    "787.400b6a6a.chunk.js.map": "/static/js/787.400b6a6a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.580dd6f3.css",
+    "static/js/main.48e26e11.js"
+  ]
+}
