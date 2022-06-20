@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext} from "react";
 
 const CartContext = createContext()
 
@@ -10,7 +10,7 @@ export const CartContextProvider = ({ children }) => {
         if(!isInCart(productToAdd.id)) {
             setCart([...cart, productToAdd])
         } else {
-            const newCart = cart.map(prod => {
+            const cartUpdated = cart.map(prod => {
                 if(prod.id === productToAdd.id) {
                     const newProduct = {
                         ...prod,
@@ -21,7 +21,7 @@ export const CartContextProvider = ({ children }) => {
                    return prod 
                 }
             })
-            setCart(newCart)
+            setCart(cartUpdated)
         }
     }
     
