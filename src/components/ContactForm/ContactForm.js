@@ -2,7 +2,7 @@ import s from "./ContactForm.module.css"
 import { useState } from "react"
 import { useNotification } from "../../notification/Notification"
 
-const ContactForm = (buyer, setBuyer, trigger, setTrigger) => {
+const ContactForm = ({buyer, setBuyer, trigger, setTrigger}) => {
 
     const {setNotification} = useNotification()
 
