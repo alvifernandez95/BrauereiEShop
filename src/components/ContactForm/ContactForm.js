@@ -17,6 +17,12 @@ const ContactForm = ({buyer, setBuyer, trigger, setTrigger}) => {
         setSubmitted(true);
     }
 
+    const closeSubmit = () => {
+        if (submitted){
+            setTrigger(false)
+        }
+    }
+
     return (trigger) ? (
         <div className={s.formContainer}>
             <button className={s.closeButton} onClick={() => setTrigger(false)}>x</button>
@@ -56,7 +62,7 @@ const ContactForm = ({buyer, setBuyer, trigger, setTrigger}) => {
                     className={s.formField}
                     placeholder="Comentario"
                     name="comment"/>
-                <button className={s.formField} type="submit">
+                <button className={s.formField} type="submit" onClick={closeSubmit}>
                     Registrarse
                 </button>
             </form>
