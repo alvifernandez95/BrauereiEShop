@@ -2,12 +2,11 @@ import s from "./ContactForm.module.css"
 import { useState } from "react"
 import { useNotification } from "../../notification/Notification"
 
-const ContactForm = ({buyer, setBuyer, trigger, setTrigger}) => {
+const ContactForm = ({buyer, setBuyer, trigger, setTrigger, valid, setValid}) => {
 
     const {setNotification} = useNotification()
 
     const [submitted, setSubmitted] = useState(false);
-    const [valid, setValid] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -63,7 +62,7 @@ const ContactForm = ({buyer, setBuyer, trigger, setTrigger}) => {
                     placeholder="Comentario"
                     name="comment"/>
                 <button className={s.formField} type="submit" onClick={closeSubmit}>
-                    Registrarse
+                    Enviar
                 </button>
             </form>
             

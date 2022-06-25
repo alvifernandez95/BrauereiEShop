@@ -11,8 +11,9 @@ import ContactForm from "../ContactForm/ContactForm"
 
 
 const Cart = () => {
+    const [valid, setValid] = useState(false);
     const [loading, setLoading] = useState(false)
-
+    const [successOrder, setSuccessOrder] = useState(false)
     const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext) 
     
     const {setNotification} = useNotification()
@@ -59,7 +60,7 @@ const Cart = () => {
             }).then(() => {
                 if(outOfStock.length === 0) {
                     const collectionRef = collection(db, 'orders')
-                    return addDoc(collectionRef, objOrder)
+                    return addDoc(collectionRef, objOrder) 
                 } else {
                     return Promise.reject({type: 'out_of_stock', products: outOfStock})
                 }
@@ -67,6 +68,7 @@ const Cart = () => {
                 batch.commit()
                 clearCart()
                 setNotification('success', `El id de la orden es : ${id}`)
+                setSuccessOrder(true)
             }).catch(error => {
                 setNotification('error', `Algunos productos no tienen stock.`)
             }).finally(() => {
@@ -78,7 +80,7 @@ const Cart = () => {
         return <h1>Generando Orden...</h1>
     }
 
-    if(getQuantity() === 0) {
+    if(getQuantity() === 0 && !successOrder) {
         return (
             <div>
                 <h1>No hay items en el carrito</h1>
@@ -90,15 +92,30 @@ const Cart = () => {
         )
     }
 
+    if(successOrder) {
+        return (
+            <div>
+                <h1>Su orden ha sido generada correctamente</h1>
+                <div>
+                    <h2>Datos del Comprador</h2>
+                    <p>Nombre: {buyer.name}</p>
+                    <p>E-mail: {buyer.email}</p>
+                    <p>Dirección: {buyer.address}</p>
+                    <p>Teléfono: {buyer.phone}</p>
+                </div>
+            </div>
+        )
+    }
+
     return (     
         <div className={s.CartContainer}>
             <h1 className={s.MainTitle}>Cart</h1>
             { cart.map(p => <CartItem className={s.CartContent} key={p.id} {...p}/>) }
             <h3 className={s.SubTitle}>Total: ${getTotal()}</h3>
-            <button onClick={() => setButtonPopup(true)} className={s.Button}>Registrarse</button>
+            {!valid ?<button onClick={() => setButtonPopup(true)} className={s.Button}>Registrarse</button>:null}
             <button onClick={() => clearCart()} className={s.Button}>Limpiar carrito</button>
-            <ContactForm buyer={buyer} setBuyer={setBuyer} trigger={buttonPopup} setTrigger={setButtonPopup}/>
-            <button className={s.Button} onClick={createOrder}>Generar Orden</button>
+            <ContactForm buyer={buyer} setBuyer={setBuyer} trigger={buttonPopup} setTrigger={setButtonPopup} valid={valid} setValid={setValid}/>
+            {valid ? <button className={s.Button} onClick={createOrder}>Generar Orden</button>:null}
 
         </div>
     )
