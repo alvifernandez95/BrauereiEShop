@@ -3,13 +3,21 @@ import logo from './LogoBrauerei.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
 import { Link, NavLink } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CartContext from '../../context/CartContext';
+import {getCategories} from '../../services/firebase/firestore'
 
 const NavBar = () => {
+    const [categories, setCategories] = useState([])
     const { getQuantity } = useContext(CartContext)
 
     const quantity = getQuantity()
+
+    useEffect(() => {
+        getCategories().then(response => {
+            setCategories(response)
+        })
+    } , [])
     return (
         <nav className={s.mainNav}>
             <Link to='/' className={s.LogoLink}>
@@ -20,9 +28,12 @@ const NavBar = () => {
             </Link>
             
             <div className={s.Categories}>
-                <NavLink to='category/importadas'  className={s.Option}>Importadas</NavLink>
-                <NavLink to='category/nacionales' className={s.Option}>Nacionales</NavLink>
-                <NavLink to='category/accesorios' className={s.Option}>Accesorios</NavLink>
+                {categories.map(cat => {
+                    <NavLink key={cat.id} to={`category/${cat.id}`}  className={s.Option}>
+                        {cat.label}
+                    </NavLink>
+                })}
+                
             </div>
             <div>
                 {quantity > 0 &&  <CartWidget/>}
