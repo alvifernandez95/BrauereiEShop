@@ -1,5 +1,5 @@
 import { db } from ".";
-import { collection, where, query, getDocs } from 'firebase/firestore';
+import { collection, where, query, getDocs, getDoc, doc } from 'firebase/firestore';
 
 export const getProducts = (categoryId) => {
     return new Promise((resolve, reject) => {
@@ -25,6 +25,17 @@ export const getCategories = () => {
                 return {id: doc.id, ...doc.data()}
             })
             resolve(categorias)
+        }).catch(error => {
+            reject(error)
+        })
+    })
+}
+
+export const getProduct = (productId) => {
+    return new Promise((resolve, reject) => {
+        getDoc(doc(db, 'productos', productId)).then(response => {
+            const producto = {id: response.id, ...response.data()}
+            resolve(producto)
         }).catch(error => {
             reject(error)
         })

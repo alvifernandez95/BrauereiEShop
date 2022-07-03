@@ -1,5 +1,4 @@
-import {memo} from 'react'
-import Item from './Item'
+import Item from '../Item/Item'
 
 function ItemList ({productos}) {
     return (
@@ -19,6 +18,4 @@ function ItemList ({productos}) {
 }
 
 
-export default memo(ItemList, (prevProps, nextProps) => {
-    return true
-})
+export default ItemList

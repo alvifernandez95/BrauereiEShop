@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemList/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -16,14 +16,14 @@ function App() {
             <header className="App-header">
               <NavBar />
             </header>
-            <body className='App-body'>
+            <div className='App-body'>
                 <Routes>
                   <Route path='/' element={<ItemListContainer color='white' greeting='Todos los productos' background='#EBAD17' className='List'/>}/>
                   <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos filtrados por categoria"/>}/>
                   <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
                   <Route path='/cart' element={<Cart />} />
                 </Routes>
-            </body>
+            </div>
           </BrowserRouter>
         </NotificationProvider>
       </CartContextProvider>

@@ -28,11 +28,11 @@ const NavBar = () => {
             </Link>
             
             <div className={s.Categories}>
-                {categories.map(cat => {
+                {categories.map(cat => (
                     <NavLink key={cat.id} to={`category/${cat.id}`}  className={s.Option}>
                         {cat.label}
                     </NavLink>
-                })}
+                ))}
                 
             </div>
             <div>

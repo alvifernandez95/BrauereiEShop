@@ -1,36 +1,24 @@
 import s from './ItemDetailContainer.module.css'
-import { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useParams} from 'react-router-dom'
-import {getDoc, doc} from 'firebase/firestore'
-import {db} from '../../services/firebase'
+import { getProduct } from '../../services/firebase/firestore'
+import { useFirestore } from '../../hooks/useFirestore'
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(true)
-
     const { productId } = useParams()
-    
+    const { isLoading, data, error } = useFirestore(() => getProduct(productId), [productId])    
 
-    useEffect(() => {
-        getDoc(doc(db, 'productos', productId)).then(response => {
-            const producto = {id: response.id, ...response.data()}
-            setProduct(producto)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-
-    }, [productId])
-
-    if(loading) {
+    if(isLoading) {
         return <h1>Loading...</h1>
+    }
+
+    if(error){
+        return <h1>Error</h1>
     }
 
     return(
         <div className={s.ItemDetailContainer}>
-            <ItemDetail {...product}/>
+            <ItemDetail {...data}/>
         </div>
     )
 }
