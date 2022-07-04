@@ -40,3 +40,40 @@ Si deseas correr este repositorio de manera local deberás seguir estos pasos:
 
  Deberás configurar las siguientes variables de entorno para que el proyecto funcione en tu repositorio local.
  Ver [`.env.example`] para tener un ejemplo de cómo hacerlo (https://github.com/alvifernandez95/BrauereiEShop/blob/main/.env.example).
+
+ ## Firebase
+Este proyecto se creo utilizando Firebase. Si deseas que el repositorio funciones en tu repositorio local, 
+además de configurar las variables de entorno mencionadas anteriormente, también deberás crear tu propio proyecto en Firebase. Este deberá contar con las siguientes colecciones:
+>Productos
+>Categorias
+>Ordenes
+
+Dentro de la colección Producto, los campos que se tienen son:
+
+    * nombre
+    * descripcion
+    * precio
+    * origen
+    * tipo
+    * imagen
+    * categoria
+    * id
+    * stock
+    * IBU
+    * porcentaje
+
+En la colección ordenes se tienen los campos:
+
+    * Items
+        * id
+        * imagen
+        * precio
+        * cantidad
+        * nombre
+    * Buyer
+        * nombre
+        * email
+        * direccion
+        * telefono
+        * comentario
+    * Total
