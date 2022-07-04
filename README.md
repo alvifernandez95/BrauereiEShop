@@ -44,9 +44,10 @@ Si deseas correr este repositorio de manera local deberás seguir estos pasos:
  ## Firebase
 Este proyecto se creo utilizando Firebase. Si deseas que el repositorio funciones en tu repositorio local, 
 además de configurar las variables de entorno mencionadas anteriormente, también deberás crear tu propio proyecto en Firebase. Este deberá contar con las siguientes colecciones:
->Productos
->Categorias
->Ordenes
+
+    *Productos
+    *Categorias
+    *Ordenes
 
 Dentro de la colección Producto, los campos que se tienen son:
 

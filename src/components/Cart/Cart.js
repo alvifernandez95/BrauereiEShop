@@ -14,6 +14,7 @@ const Cart = () => {
     const [valid, setValid] = useState(false);
     const [loading, setLoading] = useState(false)
     const [successOrder, setSuccessOrder] = useState(false)
+    const [orderInfo, setOrderInfo] = useState({})
     const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext) 
     
     const {setNotification} = useNotification()
@@ -66,6 +67,7 @@ const Cart = () => {
                 }
             }).then(({id}) => {
                 batch.commit()
+                setOrderInfo(objOrder)
                 clearCart()
                 setNotification('success', `El id de la orden es : ${id}`)
                 setSuccessOrder(true)
@@ -94,15 +96,30 @@ const Cart = () => {
 
     if(successOrder) {
         return (
-            <div>
-                <h1>Su orden ha sido generada correctamente</h1>
-                <div>
+            <div className={s.orderInfoContainer}>
+                <h1 className={s.orderInfoTitle}>Su orden ha sido generada correctamente</h1>
+                <div className={s.orderInfoBuyer}>
                     <h2>Datos del Comprador</h2>
-                    <p>Nombre: {buyer.name}</p>
-                    <p>E-mail: {buyer.email}</p>
-                    <p>Dirección: {buyer.address}</p>
-                    <p>Teléfono: {buyer.phone}</p>
+                    <p><b>Nombre:</b> {buyer.name}</p>
+                    <p><b>E-mail:</b> {buyer.email}</p>
+                    <p><b>Dirección:</b> {buyer.address}</p>
+                    <p><b>Teléfono</b> {buyer.phone}</p>
                 </div>
+                <div>
+                    <h2>Datos de Los productos</h2>
+                    {orderInfo.items.map(prod => {
+                        return(
+                            <div className={s.orderInfoProducts}>
+                                <p><b>Nombre:</b> {prod.nombre}</p>
+                                <p><b>Cantidad:</b> {prod.quantity}</p>
+                                <p><b>Precio:</b> {prod.precio}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+                <Link to='/'>
+                    <h2>Vover a la página de inicio.</h2>
+                </Link>
             </div>
         )
     }
