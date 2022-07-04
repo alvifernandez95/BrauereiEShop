@@ -39,4 +39,4 @@ Si deseas correr este repositorio de manera local deberás seguir estos pasos:
  ## Variables de entorno
 
  Deberás configurar las siguientes variables de entorno para que el proyecto funcione en tu repositorio local.
- Ver [`.env.example`] para tener un ejemplo de cómo hacerlo.
+ Ver [`.env.example`] para tener un ejemplo de cómo hacerlo (https://github.com/alvifernandez95/BrauereiEShop/blob/main/.env.example).
