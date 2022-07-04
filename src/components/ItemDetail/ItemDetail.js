@@ -5,35 +5,15 @@ import {Link} from 'react-router-dom';
 import CartContext from '../../context/CartContext';
 import { useNotification } from '../../notification/Notification';
 
-const InputCount = ({ onAdd, stock, initial = 1}) => {
-    const [quantity, setQuantity] = useState(initial)
 
-
-
-    const handleChange = (e) => {
-        if(e.target.value <= stock && e.target.value > 0) {
-            setQuantity(e.target.value)
-        }
-    }
-
-    return (
-        <div>
-            <input type='number' onChange={handleChange} value={quantity}/>
-            <button onClick={() => onAdd(quantity)}>Agregar al carrito</button>
-        </div>
-    )
-}
-
-function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje, IBU, descripcion}) {
+const ItemDetail = ({imagen, nombre, id, precio, stock, pais, estilo, porcentaje, IBU, descripcion}) => {
     
     const [quantity, setQuantity] = useState(0)
-    const [inputType, setInputType] = useState('button')
-
+    
     const { setNotification } = useNotification()
 
     const {addItem , getProduct} = useContext(CartContext)
 
-    const Count = inputType === 'button' ? ItemCount : InputCount
     
     const handleOnAdd = (quantity) => {
         setQuantity(quantity)
@@ -43,7 +23,6 @@ function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje
     
     return (
         <div className={s.cardContainer} key={id}>
-            <button onClick={() => setInputType('input')}>Cambiar contador</button>
             <div className={s.titleImage}>
                 <h1><b>{nombre}</b></h1>
                 <img src={imagen} alt={nombre} className={s.componentsImg}/>
@@ -57,7 +36,10 @@ function ItemDetail({imagen, nombre, id, precio, stock, pais, estilo, porcentaje
                 <p>Descripcion: {descripcion}</p>
                 <footer className='ItemFooter'>
                 { quantity > 0  
-                    ? <Link to='/cart' className='Option'>Finalizar compra</Link> 
+                    ? <div className={s.buttonContainer}>
+                        <Link to='/cart' className={s.Option}>Finalizar compra</Link> 
+                        <Link to='/' className={s.Option}>Continuar Comprando</Link> 
+                     </div>
                     : <ItemCount stock={stock} onAdd={handleOnAdd} initial={getProduct(id)?.quantity}/>}
                 </footer>
             </div>

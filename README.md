@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# ¡Bienvenido a la aplicación de Brauerei!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ **Brauerei** es un e-commerce para amantes de la buena cerveza. Contamos con el más diverso catálogo de productos y accesorios de todas partes del mundo. Te invitamos a descubrirlo.
 
-## Available Scripts
+# ¿Cómo funciona el sitio?
 
-In the project directory, you can run:
+En la página principal te encontrarás con todos nuestros productos. Podés filtrarlos por categoría usando los botones de la barra de navegación.
 
-### `npm start`
+##  Detalles del producto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Si querés ver el detalle de algún producto, solamente tenés que hacer click en el botón de **Ver Detalle** del ítem cuyo detalle quieras ver. Esto desplegará el detalle del producto, donde podrás visualizar la descripción del producto, su origen y el tipo de producto, entre otros. Además, haciendo uso del **Contador** vas a poder añadir ítems a tu carrito.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Ver el Carrito
 
-### `npm test`
+Una vez que hayas añadido productos a tu carrito, desde la vista del detalle del producto, podrás hacer click sobre el botón **Finalizar Compra**, lo cual te llevará directamente a visualizar el detalle del carrito. También podrás acceder a esta vista haciendo click sobre el **Widget** del carrito que se encuentra en la barra de navegación. Si en lugar de ir al checkout, deseas seguir comprando, podés hacer click en el botón **Continuar Comprando**, lo cual te llevará de vuelta a la pantalla de inicio.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Vista del carrito
+En la vista del carrito podrás ver cada uno de los items añadidos, con sus respectivos nombres, cantidades y precio unitario. Además podrás ver el total de tu compra. Contás con botones para eliminar cada uno de los ítems o también podés hacer click sobre el botón **Vaciar Carrito** se querés deshacerte de todos los ítems. 
 
-### `npm run build`
+##  Realizar una compra
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Si estás conforme con los productos que están en tu carrito y deseas realizar la compra, primero deberás registrarte para que nos puedas dar tus datos de envío. Para eso debes hacer click en el botón **Registrarme**. Una vez que hayas completado el formulario existosamente, este se cerrará y se habilitará el botón **Generar Orden**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##  Detalle de la Orden
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Luego de generada la orden, podrás ver automáticamente el detalle de envío que ingresaste.
 
-### `npm run eject`
+# Utilizar este proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Si deseas correr este repositorio de manera local deberás seguir estos pasos:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+ $ git clone https://github.com/alvifernandez95/BrauereiEShop
+ $ cd ./brauerei
+ $ npm install
+ $ npm start
+ ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ ## Variables de entorno
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Deberás configurar las siguientes variables de entorno para que el proyecto funcione en tu repositorio local.
+ Ver [`.env.example`] para tener un ejemplo de cómo hacerlo.
